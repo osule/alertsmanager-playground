@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="wasm_exec.js"></script>
+    <script>
+        const go = new Go();
+        WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject).then((result) => {
+            go.run(result.instance);
+        });
+    </script>
+</head>
+
+<body>
+    <label>Enter name</label>
+    <input name="name" id="name" />
+
+    <div id="result">
+
+    </div>
+    <script>
+        const name = document.querySelector("#name");
+        const result = document.querySelector("#result");
+        name.onchange = function (event) {
+            result.innerHTML = `${printName(event.target.value)}`
+
+        }
+    </script>
+</body>
+
+</html>
