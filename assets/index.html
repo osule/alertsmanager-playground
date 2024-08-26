@@ -13,19 +13,29 @@
 </head>
 
 <body>
-    <label>Enter name</label>
-    <input name="name" id="name" />
+
+    <div>
+        <label>Template</label>
+        <textarea name="template" id="template"></textarea>
+
+    </div>
+    <div>
+        <label>Context data</label>
+        <textarea name="contextdata" id="contextdata"></textarea>
+    </div>
 
     <div id="result">
 
     </div>
     <script>
-        const name = document.querySelector("#name");
-        const result = document.querySelector("#result");
-        name.onchange = function (event) {
-            result.innerHTML = `${printName(event.target.value)}`
+        const tpl = document.querySelector("#template");
+        const contextdata = document.querySelector("#contextdata");
 
+
+        tpl.onchange = contextdata.onchange = function (event) {
+            result.innerHTML = `${render(tpl.value, contextdata.value)}`
         }
+
     </script>
 </body>
 
