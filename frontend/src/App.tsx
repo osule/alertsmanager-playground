@@ -53,7 +53,7 @@ function App() {
         <div className="grid grid-cols-1 gap-4 mb-6">
           <div className="p-5">
             <div>
-              <h1 className="text-4xl font-bold text-gray-800 mb-4">
+              <h1 className="text-4xl font-mono font-bold text-gray-800 mb-4">
                 {t("heading")}
               </h1>
             </div>
