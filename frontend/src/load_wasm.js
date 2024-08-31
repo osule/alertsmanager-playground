@@ -7,7 +7,9 @@
 (async function loadWasm() {
   const go = new Go();
   try {
-    const response = await fetch("/alertsmanager-playground/main.wasm");
+    const response = await fetch(
+      "/alertsmanager-template-playground/main.wasm"
+    );
     const { instance } = await WebAssembly.instantiateStreaming(
       response,
       go.importObject

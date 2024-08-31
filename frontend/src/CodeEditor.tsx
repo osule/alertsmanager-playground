@@ -89,6 +89,7 @@ export function CodeEditor({
           theme="vs-dark" // Set theme (optional)
           options={{
             fontSize: 14,
+            wordWrap: "on",
             automaticLayout: true,
             minimap: { enabled: false }, // Disable minimap for a cleaner look
             scrollBeyondLastLine: false, // Prevent scrolling beyond the last line
