@@ -1,4 +1,4 @@
-# Alertsmanager playground
+# Alertsmanager template playground
 
 A visual playground for testing out templates for [Prometheus Alert Manager](https://github.com/prometheus/alertmanager).
 

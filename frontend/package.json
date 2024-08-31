@@ -20,7 +20,7 @@
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://osule.github.io/alertsmanager-playground",
+  "homepage": "https://osule.github.io/alertsmanager-template-playground",
   "scripts": {
     "start": "craco start",
     "build": "craco build",
