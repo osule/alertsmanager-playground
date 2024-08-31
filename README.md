@@ -1,3 +1,5 @@
+<img src="./frontend/src/logo.svg" alt="logo" width="40">
+
 # Alertsmanager template playground
 
 A visual playground for testing out templates for [Prometheus Alert Manager](https://github.com/prometheus/alertmanager).
