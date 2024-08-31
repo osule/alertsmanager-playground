@@ -1,0 +1,30 @@
+{{ range .Alerts.Firing }}
+<tr
+    style="margin: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px;">
+    <td class="content-block"
+        style="margin: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; padding: 0 0 20px;"
+        valign="top">
+        <strong
+            style="margin: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px;">Labels</strong><br
+            style="margin: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px;">
+
+
+        <div>Starts at: {{ .StartsAt }}</div> <!-- Include the StartsAt field -->
+
+
+        {{ range .Labels.SortedPairs }}{{ .Name }} = {{ .Value }}<br
+            style="margin: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px;">{{
+        end }}
+        {{ if gt (len .Annotations) 0 }}<strong
+            style="margin: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px;">Annotations</strong><br
+            style="margin: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px;">{{
+        end }}
+        {{ range .Annotations.SortedPairs }}{{ .Name }} = {{ .Value }}<br
+            style="margin: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px;">{{
+        end }}
+        <a href="{{ .GeneratorURL }}"
+            style="margin: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; color: #348eda; text-decoration: underline;">Source</a><br
+            style="margin: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px;">
+    </td>
+</tr>
+{{ end }}

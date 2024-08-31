@@ -1,0 +1,52 @@
+{
+    "receiver": "team-X-mails",
+    "status": "active",
+    "alerts": [
+        {
+            "annotations": {
+                "summary": "Service is down"
+            },
+            "endsAt": "2024-08-22T11:56:32.971Z",
+            "fingerprint": "848d4fa77803ce9d",
+            "receivers": [
+                {
+                    "name": "team-X-mails"
+                }
+            ],
+            "startsAt": "2024-08-22T11:48:12.971Z",
+            "status": "Firing",
+            "updatedAt": "2024-08-22T11:52:32.988Z",
+            "generatorURL": "http://6f0677f31ddc:9090/graph?g0.expr=up%7Bjob%3D%22services%22%7D+%3C+1\u0026g0.tab=1",
+            "labels": {
+                "alertname": "InstanceDown",
+                "instance": "idonotexists:564",
+                "job": "services"
+            }
+        },
+        {
+            "annotations": {
+                "summary": "Service is down"
+            },
+            "endsAt": "2024-08-22T11:56:32.971Z",
+            "fingerprint": "e4a67535b46abfe9",
+            "receivers": [
+                {
+                    "name": "team-X-mails"
+                }
+            ],
+            "startsAt": "2024-08-22T11:48:12.971Z",
+            "status": "firing",
+            "updatedAt": "2024-08-22T11:52:32.988Z",
+            "generatorURL": "http://6f0677f31ddc:9090/graph?g0.expr=up%7Bjob%3D%22services%22%7D+%3C+1\u0026g0.tab=1",
+            "labels": {
+                "alertname": "InstanceDown",
+                "instance": "prometheus:9090",
+                "job": "services"
+            }
+        }
+    ],
+    "groupLabels": {},
+    "commonLabels": {},
+    "commonAnnotations": {},
+    "externalURL": ""
+}
