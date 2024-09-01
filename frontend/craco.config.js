@@ -4,11 +4,11 @@ const path = require("path");
 module.exports = {
   webpack: {
     configure: (webpackConfig, { env, paths }) => {
-      webpackConfig.resolve.extensions.push(".txt");
-      const txtExtensionRegExp = /\.txt$/i;
+      webpackConfig.resolve.extensions.push(".tmpl");
+      const tmplExtensionRegExp = /\.tmpl$/i;
 
-      const txtLoader = {
-        test: txtExtensionRegExp,
+      const tmplLoader = {
+        test: tmplExtensionRegExp,
         use: "raw-loader",
         include: path.resolve(__dirname, "src"),
       };
@@ -16,7 +16,7 @@ module.exports = {
         (rule) => rule.oneOf?.length > 0
       );
 
-      rule.oneOf = [txtLoader, ...rule.oneOf];
+      rule.oneOf = [tmplLoader, ...rule.oneOf];
       return webpackConfig;
     },
   },

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import "./App.css";
 import initContextDataObject from "./initContextData.json";
-import initTemplateObject from "./initTemplate.txt";
+import initTemplateObject from "./initTemplate.tmpl";
 import CodeEditor from "./CodeEditor";
 
 const initContextData = JSON.stringify(initContextDataObject, null, 4);
@@ -31,7 +31,11 @@ function App() {
 
   useEffect(() => {
     if (isReady) {
-      setPreview(window.render(template, contextData));
+      try {
+        setPreview(window.render(template, contextData));
+      } catch (err) {
+        console.error("Could not render template with contextdata", err);
+      }
     } else {
       console.error(
         "Render function is not available after loading WebAssembly."
@@ -84,7 +88,7 @@ function App() {
               {t("preview.title")}
             </p>
             <div
-              className="bg-gray-100 rounded-lg shadow-lg border border-gray-200 p-5"
+              className="bg-gray-100 rounded-lg shadow-lg border border-gray-200 p-5 overflow-scroll"
               dangerouslySetInnerHTML={{ __html: preview }}
             />
           </div>

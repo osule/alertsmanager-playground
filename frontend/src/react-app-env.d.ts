@@ -1,6 +1,6 @@
 /// <reference types="react-scripts" />
 
-declare module '*.txt' {
+declare module '*.tmpl' {
   const content: string;
   export default content;
 }
